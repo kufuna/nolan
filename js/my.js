@@ -18,6 +18,7 @@ $('.innerBody').click(function(){
 	// $(this).css({ width : '100%' , height : '100%' , left : '0' , right : '0' , bottom :'0' , top : '0' })
 	$('.innerBody h1').css({ transform : 'translateY(-100%)' });
 	$(this).parent().addClass('height');
+	$(this).parent().find('audio').get(0).play();
 	setTimeout(function() {
 		$('.innerBody').parent().css({ height : '0' , transform : 'skew(20deg)' , transition : '1s' });
 		setTimeout(function() {
@@ -32,6 +33,7 @@ $('.innerBody').click(function(){
 })
 $('.close span').on('click',function(){
 	$(this).parent().parent().parent().parent().parent().removeClass('active');
+	$(this).parent().parent().parent().parent().parent().find('audio').get(0).pause();
 	$(this).parent().parent().parent().parent().hide();
 	$('.innerBody').toggle();
 	setTimeout(function() {
@@ -49,6 +51,7 @@ $('.close span').on('click',function(){
 $('.c_btn').on('click',function(){
 	const b = $(this).attr('data-target')
 	$(this).parent().parent().parent().parent().parent().parent().removeClass('active');
+	$(this).parent().parent().parent().parent().parent().parent().find('audio').get(0).pause();
 	$(this).parent().parent().parent().parent().parent().hide();
 	$('.innerBody').toggle();
 	setTimeout(function() {
